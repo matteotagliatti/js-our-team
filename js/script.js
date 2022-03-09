@@ -34,20 +34,26 @@ const team = [
 ];
 
 // Exercise
-const cards = document.querySelector(".cards");
 
-for (let i = 0; i < team.length; i++) {
-  const card = document.createElement("div");
-  card.classList.add("card");
+createStuff();
 
-  const img = createImg("img", team[i].image);
-  const h2 = createText("h2", team[i].name);
-  const para = createText("p", team[i].role);
+function createStuff() {
+  const cards = document.querySelector(".cards");
+  cards.innerHTML = "";
 
-  card.appendChild(img);
-  card.appendChild(h2);
-  card.appendChild(para);
-  cards.appendChild(card);
+  for (let i = 0; i < team.length; i++) {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const img = createImg("img", team[i].image);
+    const h2 = createText("h2", team[i].name);
+    const para = createText("p", team[i].role);
+
+    card.appendChild(img);
+    card.appendChild(h2);
+    card.appendChild(para);
+    cards.appendChild(card);
+  }
 }
 
 function createImg(tag, value) {
@@ -61,3 +67,22 @@ function createText(tag, value) {
   text.innerHTML = value;
   return text;
 }
+
+// EXTRA
+
+function addMember() {
+  const newMember = {};
+  newMember.name = document.getElementById("name").value;
+  newMember.role = document.getElementById("role").value;
+  team.push(newMember);
+  createStuff();
+}
+
+// Prevent form from reloading the page
+const form = document.querySelector("form");
+
+function handleForm(event) {
+  event.preventDefault();
+}
+
+form.addEventListener("submit", handleForm);
