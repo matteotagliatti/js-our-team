@@ -101,7 +101,7 @@ input {
 }
 
 .card > h2 {
-  margin-bottom: 0;
+  margin-bottom: 0.2rem;
 }
 
 /* Media Queries */
