@@ -33,24 +33,31 @@ const team = [
   },
 ];
 
-//
+// Exercise
 const cards = document.querySelector(".cards");
 
 for (let i = 0; i < team.length; i++) {
   const card = document.createElement("div");
   card.classList.add("card");
 
-  const img = document.createElement("img");
-  img.src = `img/${team[i].image}`;
+  const img = createImg("img", team[i].image);
+  const h2 = createText("h2", team[i].name);
+  const para = createText("p", team[i].role);
+
   card.appendChild(img);
-
-  const h2 = document.createElement("h2");
-  h2.innerHTML = team[i].name;
   card.appendChild(h2);
-
-  const p = document.createElement("p");
-  p.innerHTML = team[i].role;
-  card.appendChild(p);
-
+  card.appendChild(para);
   cards.appendChild(card);
+}
+
+function createImg(tag, value) {
+  const img = document.createElement(tag);
+  img.src = `img/${value}`;
+  return img;
+}
+
+function createText(tag, value) {
+  const text = document.createElement(tag);
+  text.innerHTML = value;
+  return text;
 }
