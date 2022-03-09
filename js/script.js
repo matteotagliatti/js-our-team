@@ -38,6 +38,7 @@ const team = [
 createStuff();
 
 function createStuff() {
+  // Reset
   const cards = document.querySelector(".cards");
   cards.innerHTML = "";
 
