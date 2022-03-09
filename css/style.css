@@ -6,6 +6,8 @@
 
 :root {
   --width: 1200px;
+  --tablet-width: 800px;
+  --mobile-width: 500px;
   --default-border-radius: 10px;
 }
 
@@ -70,4 +72,29 @@ p {
   width: 100%;
   margin-bottom: 0.7rem;
   border-radius: var(--default-border-radius);
+}
+
+/* Media Queries */
+/* Tablet */
+
+@media screen and (max-width: 1200px) {
+  main {
+    max-width: var(--tablet-width);
+  }
+
+  .card {
+    width: calc(var(--tablet-width) / 2 - 1rem);
+  }
+}
+
+/* Mobile */
+
+@media screen and (max-width: 800px) {
+  main {
+    max-width: var(--mobile-width);
+  }
+
+  .card {
+    width: calc(var(--mobile-width) - 1rem);
+  }
 }
