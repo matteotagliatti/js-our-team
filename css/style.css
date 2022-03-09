@@ -52,7 +52,7 @@ p {
 }
 
 .card {
-  width: calc(var(--width) / 4 - 1rem);
+  width: calc(var(--width) / 3 - 1rem);
   padding: 1rem;
   text-align: left;
   border-radius: var(--default-border-radius);
