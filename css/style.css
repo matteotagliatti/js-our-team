@@ -96,8 +96,12 @@ input {
 
 .card > img {
   width: 100%;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.8rem;
   border-radius: var(--default-border-radius);
+}
+
+.card > h2 {
+  margin-bottom: 0;
 }
 
 /* Media Queries */
