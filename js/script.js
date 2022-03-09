@@ -73,16 +73,23 @@ function createText(tag, value) {
 function addMember() {
   const newMember = {};
   newMember.name = document.getElementById("name").value;
+  newMember.name = capitalizeFirstLetter(newMember.name);
   newMember.role = document.getElementById("role").value;
+  newMember.role = capitalizeFirstLetter(newMember.role);
+  newMember.image = document.getElementById("image").value;
   team.push(newMember);
   createStuff();
 }
 
 // Prevent form from reloading the page
 const form = document.querySelector("form");
+form.addEventListener("submit", handleForm);
 
 function handleForm(event) {
   event.preventDefault();
 }
 
-form.addEventListener("submit", handleForm);
+// First letter Uppercase
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
