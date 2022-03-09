@@ -82,7 +82,7 @@ function addMember() {
   createStuff();
 }
 
-// Prevent form from reloading the page
+// Prevent form from reloading the page when Submit
 const form = document.querySelector("form");
 form.addEventListener("submit", handleForm);
 
